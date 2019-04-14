@@ -7,13 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		47F4835EA7B9C62119C66E97 /* Pods_OrienteeringQuizTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A771DE323447967B8A56C52E /* Pods_OrienteeringQuizTests.framework */; };
+		5F874B05AA1E5BA8B272ADAF /* Pods_OrienteeringQuizUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E9CCFD98EFD287E9955ADDE /* Pods_OrienteeringQuizUITests.framework */; };
 		8B3816F0225621BF00B6271D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3816EF225621BF00B6271D /* AppDelegate.swift */; };
-		8B3816F2225621BF00B6271D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3816F1225621BF00B6271D /* ViewController.swift */; };
 		8B3816F5225621BF00B6271D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B3816F3225621BF00B6271D /* Main.storyboard */; };
 		8B3816F7225621C000B6271D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B3816F6225621C000B6271D /* Assets.xcassets */; };
 		8B3816FA225621C000B6271D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B3816F8225621C000B6271D /* LaunchScreen.storyboard */; };
 		8B381705225621C000B6271D /* OrienteeringQuizTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B381704225621C000B6271D /* OrienteeringQuizTests.swift */; };
 		8B381710225621C000B6271D /* OrienteeringQuizUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B38170F225621C000B6271D /* OrienteeringQuizUITests.swift */; };
+		8B7A52B7225A52F2003C127F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8B7A52B6225A52F2003C127F /* GoogleService-Info.plist */; };
+		8BCD077D225CCCA5005ED220 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BCD077C225CCCA5005ED220 /* MapViewController.swift */; };
+		8BD4E469225B398100EC4B6F /* FBHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD4E468225B398100EC4B6F /* FBHelper.swift */; };
+		8BD4E46D225B3A9000EC4B6F /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD4E46C225B3A9000EC4B6F /* Question.swift */; };
+		8BD4E46F225B3DBC00EC4B6F /* Quiz.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD4E46E225B3DBC00EC4B6F /* Quiz.swift */; };
+		C73931F5FD1813D2A3A6D4FE /* Pods_OrienteeringQuiz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D0A9167531B2FD40A3EFBA7 /* Pods_OrienteeringQuiz.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,9 +41,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		31A103ADABFF61E7B3DD6605 /* Pods-OrienteeringQuizTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OrienteeringQuizTests.release.xcconfig"; path = "Target Support Files/Pods-OrienteeringQuizTests/Pods-OrienteeringQuizTests.release.xcconfig"; sourceTree = "<group>"; };
+		44D3DBC003ACC0C463611876 /* Pods-OrienteeringQuizTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OrienteeringQuizTests.debug.xcconfig"; path = "Target Support Files/Pods-OrienteeringQuizTests/Pods-OrienteeringQuizTests.debug.xcconfig"; sourceTree = "<group>"; };
+		6FBC60520D8EE4E8B7BE438C /* Pods-OrienteeringQuiz.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OrienteeringQuiz.debug.xcconfig"; path = "Target Support Files/Pods-OrienteeringQuiz/Pods-OrienteeringQuiz.debug.xcconfig"; sourceTree = "<group>"; };
+		709D657395D028F3198AE1DE /* Pods-OrienteeringQuizUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OrienteeringQuizUITests.release.xcconfig"; path = "Target Support Files/Pods-OrienteeringQuizUITests/Pods-OrienteeringQuizUITests.release.xcconfig"; sourceTree = "<group>"; };
+		7D0A9167531B2FD40A3EFBA7 /* Pods_OrienteeringQuiz.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OrienteeringQuiz.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7E9CCFD98EFD287E9955ADDE /* Pods_OrienteeringQuizUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OrienteeringQuizUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7F01DB49B3C477B3C0DEA6B1 /* Pods-OrienteeringQuizUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OrienteeringQuizUITests.debug.xcconfig"; path = "Target Support Files/Pods-OrienteeringQuizUITests/Pods-OrienteeringQuizUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		8B3816EC225621BF00B6271D /* OrienteeringQuiz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OrienteeringQuiz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B3816EF225621BF00B6271D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		8B3816F1225621BF00B6271D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		8B3816F4225621BF00B6271D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8B3816F6225621C000B6271D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8B3816F9225621C000B6271D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,6 +60,13 @@
 		8B38170B225621C000B6271D /* OrienteeringQuizUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OrienteeringQuizUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B38170F225621C000B6271D /* OrienteeringQuizUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrienteeringQuizUITests.swift; sourceTree = "<group>"; };
 		8B381711225621C000B6271D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8B7A52B6225A52F2003C127F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		8BCD077C225CCCA5005ED220 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		8BD4E468225B398100EC4B6F /* FBHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBHelper.swift; sourceTree = "<group>"; };
+		8BD4E46C225B3A9000EC4B6F /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
+		8BD4E46E225B3DBC00EC4B6F /* Quiz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quiz.swift; sourceTree = "<group>"; };
+		A771DE323447967B8A56C52E /* Pods_OrienteeringQuizTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OrienteeringQuizTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C65EBD5E0898B7976EC470B8 /* Pods-OrienteeringQuiz.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OrienteeringQuiz.release.xcconfig"; path = "Target Support Files/Pods-OrienteeringQuiz/Pods-OrienteeringQuiz.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C73931F5FD1813D2A3A6D4FE /* Pods_OrienteeringQuiz.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				47F4835EA7B9C62119C66E97 /* Pods_OrienteeringQuizTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,12 +90,26 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5F874B05AA1E5BA8B272ADAF /* Pods_OrienteeringQuizUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2D0A0F8ADA9295C5DFE0B1DA /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6FBC60520D8EE4E8B7BE438C /* Pods-OrienteeringQuiz.debug.xcconfig */,
+				C65EBD5E0898B7976EC470B8 /* Pods-OrienteeringQuiz.release.xcconfig */,
+				44D3DBC003ACC0C463611876 /* Pods-OrienteeringQuizTests.debug.xcconfig */,
+				31A103ADABFF61E7B3DD6605 /* Pods-OrienteeringQuizTests.release.xcconfig */,
+				7F01DB49B3C477B3C0DEA6B1 /* Pods-OrienteeringQuizUITests.debug.xcconfig */,
+				709D657395D028F3198AE1DE /* Pods-OrienteeringQuizUITests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		8B3816E3225621BF00B6271D = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +117,8 @@
 				8B381703225621C000B6271D /* OrienteeringQuizTests */,
 				8B38170E225621C000B6271D /* OrienteeringQuizUITests */,
 				8B3816ED225621BF00B6271D /* Products */,
+				2D0A0F8ADA9295C5DFE0B1DA /* Pods */,
+				C91F1034BA68AA0B2D87D8BF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -97,12 +135,14 @@
 		8B3816EE225621BF00B6271D /* OrienteeringQuiz */ = {
 			isa = PBXGroup;
 			children = (
+				8BD4E46B225B3A6200EC4B6F /* Models */,
+				8BD4E46A225B3A4400EC4B6F /* Controllers */,
 				8B3816EF225621BF00B6271D /* AppDelegate.swift */,
-				8B3816F1225621BF00B6271D /* ViewController.swift */,
 				8B3816F3225621BF00B6271D /* Main.storyboard */,
 				8B3816F6225621C000B6271D /* Assets.xcassets */,
 				8B3816F8225621C000B6271D /* LaunchScreen.storyboard */,
 				8B3816FB225621C000B6271D /* Info.plist */,
+				8B7A52B6225A52F2003C127F /* GoogleService-Info.plist */,
 			);
 			path = OrienteeringQuiz;
 			sourceTree = "<group>";
@@ -125,6 +165,34 @@
 			path = OrienteeringQuizUITests;
 			sourceTree = "<group>";
 		};
+		8BD4E46A225B3A4400EC4B6F /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				8BCD077C225CCCA5005ED220 /* MapViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		8BD4E46B225B3A6200EC4B6F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				8BD4E468225B398100EC4B6F /* FBHelper.swift */,
+				8BD4E46C225B3A9000EC4B6F /* Question.swift */,
+				8BD4E46E225B3DBC00EC4B6F /* Quiz.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		C91F1034BA68AA0B2D87D8BF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7D0A9167531B2FD40A3EFBA7 /* Pods_OrienteeringQuiz.framework */,
+				A771DE323447967B8A56C52E /* Pods_OrienteeringQuizTests.framework */,
+				7E9CCFD98EFD287E9955ADDE /* Pods_OrienteeringQuizUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -132,9 +200,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8B381714225621C000B6271D /* Build configuration list for PBXNativeTarget "OrienteeringQuiz" */;
 			buildPhases = (
+				2D34BF32E8D2D8534E91AC06 /* [CP] Check Pods Manifest.lock */,
 				8B3816E8225621BF00B6271D /* Sources */,
 				8B3816E9225621BF00B6271D /* Frameworks */,
 				8B3816EA225621BF00B6271D /* Resources */,
+				3736B9B93A08BDD220AD2E8A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -149,6 +219,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8B381717225621C000B6271D /* Build configuration list for PBXNativeTarget "OrienteeringQuizTests" */;
 			buildPhases = (
+				AB16E034D494E2D3C261E648 /* [CP] Check Pods Manifest.lock */,
 				8B3816FC225621C000B6271D /* Sources */,
 				8B3816FD225621C000B6271D /* Frameworks */,
 				8B3816FE225621C000B6271D /* Resources */,
@@ -167,6 +238,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8B38171A225621C000B6271D /* Build configuration list for PBXNativeTarget "OrienteeringQuizUITests" */;
 			buildPhases = (
+				DBE6C87962D95E51E5A0F522 /* [CP] Check Pods Manifest.lock */,
 				8B381707225621C000B6271D /* Sources */,
 				8B381708225621C000B6271D /* Frameworks */,
 				8B381709225621C000B6271D /* Resources */,
@@ -230,6 +302,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8B3816FA225621C000B6271D /* LaunchScreen.storyboard in Resources */,
+				8B7A52B7225A52F2003C127F /* GoogleService-Info.plist in Resources */,
 				8B3816F7225621C000B6271D /* Assets.xcassets in Resources */,
 				8B3816F5225621BF00B6271D /* Main.storyboard in Resources */,
 			);
@@ -251,12 +324,120 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2D34BF32E8D2D8534E91AC06 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-OrienteeringQuiz-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3736B9B93A08BDD220AD2E8A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-OrienteeringQuiz/Pods-OrienteeringQuiz-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/BoringSSL-GRPC/openssl_grpc.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-C++/grpcpp.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl_grpc.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpcpp.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-OrienteeringQuiz/Pods-OrienteeringQuiz-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AB16E034D494E2D3C261E648 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-OrienteeringQuizTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DBE6C87962D95E51E5A0F522 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-OrienteeringQuizUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		8B3816E8225621BF00B6271D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8B3816F2225621BF00B6271D /* ViewController.swift in Sources */,
+				8BD4E469225B398100EC4B6F /* FBHelper.swift in Sources */,
+				8BCD077D225CCCA5005ED220 /* MapViewController.swift in Sources */,
+				8BD4E46F225B3DBC00EC4B6F /* Quiz.swift in Sources */,
+				8BD4E46D225B3A9000EC4B6F /* Question.swift in Sources */,
 				8B3816F0225621BF00B6271D /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -430,9 +611,11 @@
 		};
 		8B381715225621C000B6271D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6FBC60520D8EE4E8B7BE438C /* Pods-OrienteeringQuiz.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 73X6L645X4;
 				INFOPLIST_FILE = OrienteeringQuiz/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -447,9 +630,11 @@
 		};
 		8B381716225621C000B6271D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C65EBD5E0898B7976EC470B8 /* Pods-OrienteeringQuiz.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 73X6L645X4;
 				INFOPLIST_FILE = OrienteeringQuiz/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -464,6 +649,7 @@
 		};
 		8B381718225621C000B6271D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 44D3DBC003ACC0C463611876 /* Pods-OrienteeringQuizTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -484,6 +670,7 @@
 		};
 		8B381719225621C000B6271D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 31A103ADABFF61E7B3DD6605 /* Pods-OrienteeringQuizTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -504,6 +691,7 @@
 		};
 		8B38171B225621C000B6271D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7F01DB49B3C477B3C0DEA6B1 /* Pods-OrienteeringQuizUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -523,6 +711,7 @@
 		};
 		8B38171C225621C000B6271D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 709D657395D028F3198AE1DE /* Pods-OrienteeringQuizUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

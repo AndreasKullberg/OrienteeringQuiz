@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina5_9" orientation="portrait">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="aXl-pj-UM6">
+    <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -15,30 +15,431 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="MapViewController" customModule="OrienteeringQuiz" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="YQN-RO-Wwp">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                                 <connections>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="BT7-LP-pOL"/>
                                 </connections>
                             </mapView>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RDS-NN-H1Y" userLabel="In Progress View">
+                                <rect key="frame" x="0.0" y="737" width="414" height="71"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E3n-iO-4ci">
+                                        <rect key="frame" x="342" y="8" width="34" height="30"/>
+                                        <state key="normal" title="Save"/>
+                                        <connections>
+                                            <action selector="saveButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hUM-bj-h5t"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GOy-s3-IXb">
+                                        <rect key="frame" x="33" y="8" width="48" height="30"/>
+                                        <state key="normal" title="Cancel"/>
+                                        <connections>
+                                            <action selector="cancelButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GAy-pQ-HMD"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="0.75310849471830987" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="GOy-s3-IXb" firstAttribute="baseline" secondItem="E3n-iO-4ci" secondAttribute="baseline" id="DPw-1y-7PN"/>
+                                    <constraint firstItem="GOy-s3-IXb" firstAttribute="leading" secondItem="RDS-NN-H1Y" secondAttribute="leading" constant="33" id="DTe-Ia-Ndp"/>
+                                    <constraint firstAttribute="trailing" secondItem="E3n-iO-4ci" secondAttribute="trailing" constant="38" id="me1-l6-A7L"/>
+                                    <constraint firstItem="GOy-s3-IXb" firstAttribute="top" secondItem="RDS-NN-H1Y" secondAttribute="topMargin" id="uVF-L9-vJh"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="YQN-RO-Wwp" secondAttribute="trailing" id="6QO-w9-Zsz"/>
-                            <constraint firstItem="YQN-RO-Wwp" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="BlW-0h-Mtc"/>
-                            <constraint firstItem="YQN-RO-Wwp" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="34" id="GLr-ax-ka7"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="top" secondItem="YQN-RO-Wwp" secondAttribute="top" constant="44" id="QCR-jy-je9"/>
+                            <constraint firstItem="RDS-NN-H1Y" firstAttribute="top" secondItem="YQN-RO-Wwp" secondAttribute="bottom" constant="-71" id="M6i-NJ-0ZB"/>
+                            <constraint firstItem="YQN-RO-Wwp" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Mbz-kK-6EJ"/>
+                            <constraint firstAttribute="trailing" secondItem="YQN-RO-Wwp" secondAttribute="trailing" id="Mjt-A7-8oP"/>
+                            <constraint firstItem="RDS-NN-H1Y" firstAttribute="bottom" secondItem="YQN-RO-Wwp" secondAttribute="bottom" id="XY9-gz-GkA"/>
+                            <constraint firstItem="RDS-NN-H1Y" firstAttribute="trailing" secondItem="YQN-RO-Wwp" secondAttribute="trailing" id="dYB-ET-Ywe"/>
+                            <constraint firstAttribute="bottom" secondItem="YQN-RO-Wwp" secondAttribute="bottom" id="krt-6c-t5f"/>
+                            <constraint firstItem="RDS-NN-H1Y" firstAttribute="leading" secondItem="YQN-RO-Wwp" secondAttribute="leading" id="pTY-CR-Bsv"/>
+                            <constraint firstItem="YQN-RO-Wwp" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="z66-WF-nZX"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" id="U2s-Ac-yVC"/>
                     <connections>
+                        <outlet property="answerStatusLabel" destination="16a-wH-9ue" id="BBM-C3-fLl"/>
+                        <outlet property="finishedQuestionPopupView" destination="4pc-SB-uwr" id="i2f-s9-asf"/>
+                        <outlet property="inProgressView" destination="RDS-NN-H1Y" id="yyo-Yg-LcJ"/>
                         <outlet property="mapView" destination="YQN-RO-Wwp" id="ISO-1d-icv"/>
+                        <outlet property="nameQuizPopupView" destination="gmh-Ha-apO" id="Yky-26-Egh"/>
+                        <outlet property="nameQuizTextField" destination="9Xt-Wa-dB9" id="qEp-65-QIE"/>
+                        <outlet property="popupLabel" destination="hdv-nx-sMx" id="zHf-iq-krb"/>
+                        <outlet property="popupView" destination="EQI-Qs-jcJ" id="qaE-fb-MBA"/>
+                        <outlet property="quizDonePopupView" destination="KKv-GA-s8V" id="9PV-NB-zr2"/>
+                        <outlet property="resultLabel" destination="iHx-yH-DeD" id="cPT-mD-y7C"/>
+                        <outlet property="rightAnswerLabel" destination="2J4-pv-Zot" id="7Tz-Rk-9zn"/>
+                        <outlet property="saveButtonOutlet" destination="E3n-iO-4ci" id="KmZ-Pe-BfK"/>
+                        <outlet property="startGamePopupView" destination="8ut-4z-BTF" id="5g4-yk-CMu"/>
+                        <outlet property="startQuestionOutlet" destination="Pyh-aQ-OKW" id="Ph2-ci-QPv"/>
+                        <outlet property="startQuizLabel" destination="qNv-Jc-rkl" id="n5Z-iR-cbc"/>
+                        <outlet property="startQuizOutlet" destination="0UN-Fe-Yjd" id="NDn-gh-qp6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <view contentMode="scaleToFill" id="8ut-4z-BTF" customClass="popupViews" customModule="OrienteeringQuiz" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="0.0" width="240" height="165"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LlN-UM-mx8">
+                            <rect key="frame" x="16" y="112" width="208" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <state key="normal" title="Cancel"/>
+                            <connections>
+                                <action selector="startGamePopupCancelButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Hdi-vk-f6i"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0UN-Fe-Yjd">
+                            <rect key="frame" x="16" y="74" width="208" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <state key="normal" title="Start quiz"/>
+                            <connections>
+                                <action selector="startQuizButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zRT-es-c46"/>
+                            </connections>
+                        </button>
+                        <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pyh-aQ-OKW">
+                            <rect key="frame" x="16" y="74" width="208" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <state key="normal" title="StartQuestion"/>
+                            <connections>
+                                <action selector="startQuestionButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Y0T-ur-Weg"/>
+                                <segue destination="wT6-qI-WvD" kind="presentation" identifier="startQuestion" id="0oj-C9-n0x"/>
+                            </connections>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qNv-Jc-rkl">
+                            <rect key="frame" x="16" y="24" width="208" height="20"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <viewLayoutGuide key="safeArea" id="K0G-9i-5Pc"/>
+                </view>
+                <view contentMode="scaleToFill" id="gmh-Ha-apO" customClass="popupViews" customModule="OrienteeringQuiz" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="0.0" width="240" height="165"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name your quiz" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9Xt-Wa-dB9" customClass="myTextfield" customModule="OrienteeringQuiz" customModuleProvider="target">
+                            <rect key="frame" x="16" y="31" width="208" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <nil key="textColor"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BAJ-FL-OLJ">
+                            <rect key="frame" x="16" y="93" width="208" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <state key="normal" title="Done"/>
+                            <connections>
+                                <action selector="doneButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="SVc-ZD-USA"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <viewLayoutGuide key="safeArea" id="yhJ-Sc-E2I"/>
+                </view>
+                <view contentMode="scaleToFill" id="KKv-GA-s8V" customClass="popupViews" customModule="OrienteeringQuiz" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="0.0" width="240" height="165"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xGa-Kc-QEE">
+                            <rect key="frame" x="16" y="94" width="208" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <state key="normal" title="Ok"/>
+                            <connections>
+                                <action selector="quizDoneOkButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="g1f-bH-Agc"/>
+                            </connections>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iHx-yH-DeD">
+                            <rect key="frame" x="16" y="33" width="208" height="21"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <viewLayoutGuide key="safeArea" id="gYq-lu-8Yh"/>
+                </view>
+                <view contentMode="scaleToFill" id="4pc-SB-uwr" customClass="popupViews" customModule="OrienteeringQuiz" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="0.0" width="240" height="165"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UdA-Zx-hz4">
+                            <rect key="frame" x="16" y="96" width="208" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <state key="normal" title="Ok"/>
+                            <connections>
+                                <action selector="okButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="puR-Xp-eCW"/>
+                            </connections>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="16a-wH-9ue">
+                            <rect key="frame" x="16" y="38" width="208" height="21"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2J4-pv-Zot">
+                            <rect key="frame" x="16" y="67" width="208" height="21"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <viewLayoutGuide key="safeArea" id="73S-wR-Tee"/>
+                </view>
+                <view contentMode="scaleToFill" id="EQI-Qs-jcJ" customClass="popupViews" customModule="OrienteeringQuiz" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="0.0" width="240" height="165"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lj8-uW-bq7">
+                            <rect key="frame" x="40" y="95" width="30" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <state key="normal" title="Yes"/>
+                            <connections>
+                                <action selector="yesButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zcS-Rq-uYq"/>
+                                <segue destination="oUp-IW-RnT" kind="presentation" identifier="createQuestion" id="jRZ-Rx-iEe"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hGd-uC-dgO">
+                            <rect key="frame" x="171" y="95" width="30" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <state key="normal" title="No"/>
+                            <connections>
+                                <action selector="noButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ftl-Lk-A0b"/>
+                            </connections>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hdv-nx-sMx">
+                            <rect key="frame" x="16" y="31" width="208" height="48"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <viewLayoutGuide key="safeArea" id="EOu-rA-C7P"/>
+                </view>
+            </objects>
+            <point key="canvasLocation" x="1001.4492753623189" y="73.660714285714278"/>
+        </scene>
+        <!--Play Quiz View Controller-->
+        <scene sceneID="Qiw-VR-PuC">
+            <objects>
+                <viewController modalPresentationStyle="overCurrentContext" id="wT6-qI-WvD" customClass="PlayQuizViewController" customModule="OrienteeringQuiz" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0cc-Dq-Qwd">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UUT-is-Vvz" customClass="popupViews" customModule="OrienteeringQuiz" customModuleProvider="target">
+                                <rect key="frame" x="16" y="279.5" width="382" height="347"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JaJ-di-NSD">
+                                        <rect key="frame" x="8" y="29" width="366" height="24"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yr5-1m-sOR">
+                                        <rect key="frame" x="8" y="77" width="366" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="13M-k9-Cil"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MOv-KV-96x" customClass="myButton" customModule="OrienteeringQuiz" customModuleProvider="target">
+                                        <rect key="frame" x="8" y="153" width="366" height="30"/>
+                                        <state key="normal" title="Button"/>
+                                        <connections>
+                                            <action selector="answerAButton:" destination="wT6-qI-WvD" eventType="touchUpInside" id="TKe-gx-RdI"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t5b-Ii-eqp" customClass="myButton" customModule="OrienteeringQuiz" customModuleProvider="target">
+                                        <rect key="frame" x="8" y="202" width="366" height="30"/>
+                                        <state key="normal" title="Button"/>
+                                        <connections>
+                                            <action selector="answerBButton:" destination="wT6-qI-WvD" eventType="touchUpInside" id="xkC-PX-yjc"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nez-uv-3np" customClass="myButton" customModule="OrienteeringQuiz" customModuleProvider="target">
+                                        <rect key="frame" x="8" y="253" width="366" height="30"/>
+                                        <state key="normal" title="Button"/>
+                                        <connections>
+                                            <action selector="answerCButton:" destination="wT6-qI-WvD" eventType="touchUpInside" id="neB-yr-4WJ"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="nez-uv-3np" firstAttribute="leading" secondItem="UUT-is-Vvz" secondAttribute="leading" constant="8" id="4re-sV-j8M"/>
+                                    <constraint firstItem="t5b-Ii-eqp" firstAttribute="leading" secondItem="UUT-is-Vvz" secondAttribute="leading" constant="8" id="931-xi-0uX"/>
+                                    <constraint firstItem="nez-uv-3np" firstAttribute="top" secondItem="t5b-Ii-eqp" secondAttribute="bottom" constant="21" id="F8I-gH-luX"/>
+                                    <constraint firstAttribute="height" constant="347" id="IWN-fQ-fXP"/>
+                                    <constraint firstItem="Yr5-1m-sOR" firstAttribute="top" secondItem="JaJ-di-NSD" secondAttribute="bottom" constant="24" id="ImE-Qc-2Ir"/>
+                                    <constraint firstAttribute="trailing" secondItem="Yr5-1m-sOR" secondAttribute="trailing" constant="8" id="LqH-hi-SoF"/>
+                                    <constraint firstAttribute="trailing" secondItem="JaJ-di-NSD" secondAttribute="trailing" constant="8" id="OAo-Kq-fJf"/>
+                                    <constraint firstAttribute="trailing" secondItem="MOv-KV-96x" secondAttribute="trailing" constant="8" id="Pkd-tL-Mye"/>
+                                    <constraint firstItem="t5b-Ii-eqp" firstAttribute="top" secondItem="MOv-KV-96x" secondAttribute="bottom" constant="19" id="YOT-ev-Mqs"/>
+                                    <constraint firstAttribute="trailing" secondItem="t5b-Ii-eqp" secondAttribute="trailing" constant="8" id="YnW-6z-Sjn"/>
+                                    <constraint firstItem="Yr5-1m-sOR" firstAttribute="leading" secondItem="UUT-is-Vvz" secondAttribute="leading" constant="8" id="aIv-fe-hdj"/>
+                                    <constraint firstItem="MOv-KV-96x" firstAttribute="top" secondItem="Yr5-1m-sOR" secondAttribute="bottom" constant="26" id="sN6-Vh-5jT"/>
+                                    <constraint firstAttribute="bottom" secondItem="nez-uv-3np" secondAttribute="bottom" constant="64" id="skk-kL-nea"/>
+                                    <constraint firstItem="JaJ-di-NSD" firstAttribute="leading" secondItem="UUT-is-Vvz" secondAttribute="leading" constant="8" id="trK-Ei-ng8"/>
+                                    <constraint firstItem="MOv-KV-96x" firstAttribute="leading" secondItem="UUT-is-Vvz" secondAttribute="leading" constant="8" id="urf-TI-u7G"/>
+                                    <constraint firstAttribute="trailing" secondItem="nez-uv-3np" secondAttribute="trailing" constant="8" id="wOa-r2-gfe"/>
+                                    <constraint firstItem="JaJ-di-NSD" firstAttribute="top" secondItem="UUT-is-Vvz" secondAttribute="top" constant="29" id="zBP-oL-8J3"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="0.24419564260563381" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="0VK-wa-eMs" firstAttribute="trailing" secondItem="UUT-is-Vvz" secondAttribute="trailing" constant="16" id="FLr-f1-lDt"/>
+                            <constraint firstItem="UUT-is-Vvz" firstAttribute="centerY" secondItem="0VK-wa-eMs" secondAttribute="centerY" id="ihq-Lx-3cd"/>
+                            <constraint firstItem="UUT-is-Vvz" firstAttribute="leading" secondItem="0VK-wa-eMs" secondAttribute="leading" constant="16" id="wRX-4I-Ymq"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="0VK-wa-eMs"/>
+                    </view>
+                    <connections>
+                        <outlet property="answerAButtonOutlet" destination="MOv-KV-96x" id="UJV-dy-Tac"/>
+                        <outlet property="answerBButtonOutlet" destination="t5b-Ii-eqp" id="j67-a8-5eE"/>
+                        <outlet property="answerCButtonOutlet" destination="nez-uv-3np" id="VBP-Jh-DrL"/>
+                        <outlet property="numberQuestionLabel" destination="JaJ-di-NSD" id="RQf-3r-ydH"/>
+                        <outlet property="questionLabel" destination="Yr5-1m-sOR" id="mdo-mN-pUL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gut-ZK-deU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1808.6956521739132" y="358.92857142857139"/>
+        </scene>
+        <!--Create Quiz View Controller-->
+        <scene sceneID="7Bu-Po-sYq">
+            <objects>
+                <viewController modalPresentationStyle="overCurrentContext" id="oUp-IW-RnT" customClass="CreateQuizViewController" customModule="OrienteeringQuiz" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9p2-jk-3gD">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4gJ-xe-mMb" customClass="popupViews" customModule="OrienteeringQuiz" customModuleProvider="target">
+                                <rect key="frame" x="16" y="277.5" width="382" height="351"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Right answer" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="w9c-kM-DQx" customClass="myTextfield" customModule="OrienteeringQuiz" customModuleProvider="target">
+                                        <rect key="frame" x="8" y="120" width="366" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Question" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jgk-rp-vNo" customClass="myTextfield" customModule="OrienteeringQuiz" customModuleProvider="target">
+                                        <rect key="frame" x="8" y="71" width="366" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Optional answer" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Jtw-rh-gwf" customClass="myTextfield" customModule="OrienteeringQuiz" customModuleProvider="target">
+                                        <rect key="frame" x="8" y="169" width="366" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Optional answer" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iMz-kL-kP3" customClass="myTextfield" customModule="OrienteeringQuiz" customModuleProvider="target">
+                                        <rect key="frame" x="8" y="218" width="366" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JCG-uK-jZY">
+                                        <rect key="frame" x="8" y="20" width="366" height="24"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Eti-oA-SnV" customClass="myButton" customModule="OrienteeringQuiz" customModuleProvider="target">
+                                        <rect key="frame" x="8" y="275" width="367" height="30"/>
+                                        <state key="normal" title="Done"/>
+                                        <connections>
+                                            <action selector="questionDone:" destination="oUp-IW-RnT" eventType="touchUpInside" id="Fw7-uM-qP1"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="351" id="3ou-eB-ztq"/>
+                                    <constraint firstAttribute="trailing" secondItem="JCG-uK-jZY" secondAttribute="trailing" constant="8" id="A4G-NH-VjG"/>
+                                    <constraint firstAttribute="trailing" secondItem="iMz-kL-kP3" secondAttribute="trailing" constant="8" id="AC9-pK-qlh"/>
+                                    <constraint firstAttribute="bottom" secondItem="Eti-oA-SnV" secondAttribute="bottom" constant="46" id="AD7-G3-4Lt"/>
+                                    <constraint firstItem="JCG-uK-jZY" firstAttribute="top" secondItem="4gJ-xe-mMb" secondAttribute="top" constant="20" id="Gsi-Pc-xhm"/>
+                                    <constraint firstItem="JCG-uK-jZY" firstAttribute="leading" secondItem="4gJ-xe-mMb" secondAttribute="leading" constant="8" id="SpJ-1E-Bd8"/>
+                                    <constraint firstItem="Jtw-rh-gwf" firstAttribute="leading" secondItem="4gJ-xe-mMb" secondAttribute="leading" constant="8" id="WZj-Tz-ywK"/>
+                                    <constraint firstItem="iMz-kL-kP3" firstAttribute="top" secondItem="Jtw-rh-gwf" secondAttribute="bottom" constant="19" id="bnJ-Ww-qbP"/>
+                                    <constraint firstItem="w9c-kM-DQx" firstAttribute="top" secondItem="jgk-rp-vNo" secondAttribute="bottom" constant="19" id="fuA-KJ-Xfp"/>
+                                    <constraint firstItem="iMz-kL-kP3" firstAttribute="leading" secondItem="4gJ-xe-mMb" secondAttribute="leading" constant="8" id="gj9-Zo-uqD"/>
+                                    <constraint firstItem="Eti-oA-SnV" firstAttribute="leading" secondItem="4gJ-xe-mMb" secondAttribute="leading" constant="8" id="mOx-8r-mbJ"/>
+                                    <constraint firstItem="Jtw-rh-gwf" firstAttribute="top" secondItem="w9c-kM-DQx" secondAttribute="bottom" constant="19" id="oSM-xv-U8l"/>
+                                    <constraint firstAttribute="trailing" secondItem="w9c-kM-DQx" secondAttribute="trailing" constant="8" id="pC3-gg-Vsa"/>
+                                    <constraint firstItem="jgk-rp-vNo" firstAttribute="top" secondItem="JCG-uK-jZY" secondAttribute="bottom" constant="27" id="rUo-oM-Ovk"/>
+                                    <constraint firstItem="Eti-oA-SnV" firstAttribute="top" secondItem="iMz-kL-kP3" secondAttribute="bottom" constant="27" id="rX0-BY-14j"/>
+                                    <constraint firstAttribute="trailing" secondItem="jgk-rp-vNo" secondAttribute="trailing" constant="8" id="tez-lz-Yvm"/>
+                                    <constraint firstItem="jgk-rp-vNo" firstAttribute="leading" secondItem="4gJ-xe-mMb" secondAttribute="leading" constant="8" id="y88-Bz-2ir"/>
+                                    <constraint firstAttribute="trailing" secondItem="Eti-oA-SnV" secondAttribute="trailing" constant="7" id="ycA-X0-o6f"/>
+                                    <constraint firstAttribute="trailing" secondItem="Jtw-rh-gwf" secondAttribute="trailing" constant="8" id="z3m-K9-tdS"/>
+                                    <constraint firstItem="w9c-kM-DQx" firstAttribute="leading" secondItem="4gJ-xe-mMb" secondAttribute="leading" constant="8" id="zRK-dc-tu4"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="0.23999999999999999" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="rEh-N5-M1I" firstAttribute="trailing" secondItem="4gJ-xe-mMb" secondAttribute="trailing" constant="16" id="2zt-3H-WZV"/>
+                            <constraint firstItem="4gJ-xe-mMb" firstAttribute="centerY" secondItem="rEh-N5-M1I" secondAttribute="centerY" id="XB5-sV-gOp"/>
+                            <constraint firstItem="4gJ-xe-mMb" firstAttribute="leading" secondItem="rEh-N5-M1I" secondAttribute="leading" constant="16" id="mqJ-Sh-Oa0"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="rEh-N5-M1I"/>
+                    </view>
+                    <connections>
+                        <outlet property="optionalAnswerA" destination="Jtw-rh-gwf" id="8f4-7E-Ema"/>
+                        <outlet property="optionalAnwerB" destination="iMz-kL-kP3" id="3B1-6p-CSw"/>
+                        <outlet property="questionLabel" destination="JCG-uK-jZY" id="EFE-gJ-zN1"/>
+                        <outlet property="questionTextfield" destination="jgk-rp-vNo" id="gbc-1L-Eij"/>
+                        <outlet property="rightAnswerTextfield" destination="w9c-kM-DQx" id="opm-H2-Wnf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Vxi-d4-tsF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2405.7971014492755" y="-308.03571428571428"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="piL-yh-be3">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="aXl-pj-UM6" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="ybi-Fc-1He">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="0.37879094559999998" green="0.69377428760000004" blue="0.33976244420000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" red="0.37879094559999998" green="0.69377428760000004" blue="0.33976244420000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="nbY-gJ-R09"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="n5L-sq-u2W" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="61.600000000000001" y="74.630541871921181"/>
         </scene>

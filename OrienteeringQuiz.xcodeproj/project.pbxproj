@@ -15,6 +15,11 @@
 		8B3816FA225621C000B6271D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B3816F8225621C000B6271D /* LaunchScreen.storyboard */; };
 		8B381705225621C000B6271D /* OrienteeringQuizTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B381704225621C000B6271D /* OrienteeringQuizTests.swift */; };
 		8B381710225621C000B6271D /* OrienteeringQuizUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B38170F225621C000B6271D /* OrienteeringQuizUITests.swift */; };
+		8B54FCBF2282E9C4005598AF /* designModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B54FCBE2282E9C4005598AF /* designModel.swift */; };
+		8B70216C22770A8E0071A45E /* CreateQuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B70216B22770A8E0071A45E /* CreateQuizViewController.swift */; };
+		8B7021A822799BCE0071A45E /* PlayQuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7021A722799BCE0071A45E /* PlayQuizViewController.swift */; };
+		8B7021AA2279B3460071A45E /* QuizAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7021A92279B3460071A45E /* QuizAnnotation.swift */; };
+		8B7021AC2279E40A0071A45E /* QuestionAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7021AB2279E40A0071A45E /* QuestionAnnotation.swift */; };
 		8B7A52B7225A52F2003C127F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8B7A52B6225A52F2003C127F /* GoogleService-Info.plist */; };
 		8BCD077D225CCCA5005ED220 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BCD077C225CCCA5005ED220 /* MapViewController.swift */; };
 		8BD4E469225B398100EC4B6F /* FBHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD4E468225B398100EC4B6F /* FBHelper.swift */; };
@@ -60,6 +65,11 @@
 		8B38170B225621C000B6271D /* OrienteeringQuizUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OrienteeringQuizUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B38170F225621C000B6271D /* OrienteeringQuizUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrienteeringQuizUITests.swift; sourceTree = "<group>"; };
 		8B381711225621C000B6271D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8B54FCBE2282E9C4005598AF /* designModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = designModel.swift; sourceTree = "<group>"; };
+		8B70216B22770A8E0071A45E /* CreateQuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateQuizViewController.swift; sourceTree = "<group>"; };
+		8B7021A722799BCE0071A45E /* PlayQuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayQuizViewController.swift; sourceTree = "<group>"; };
+		8B7021A92279B3460071A45E /* QuizAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizAnnotation.swift; sourceTree = "<group>"; };
+		8B7021AB2279E40A0071A45E /* QuestionAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionAnnotation.swift; sourceTree = "<group>"; };
 		8B7A52B6225A52F2003C127F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8BCD077C225CCCA5005ED220 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		8BD4E468225B398100EC4B6F /* FBHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBHelper.swift; sourceTree = "<group>"; };
@@ -169,6 +179,8 @@
 			isa = PBXGroup;
 			children = (
 				8BCD077C225CCCA5005ED220 /* MapViewController.swift */,
+				8B70216B22770A8E0071A45E /* CreateQuizViewController.swift */,
+				8B7021A722799BCE0071A45E /* PlayQuizViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -179,6 +191,9 @@
 				8BD4E468225B398100EC4B6F /* FBHelper.swift */,
 				8BD4E46C225B3A9000EC4B6F /* Question.swift */,
 				8BD4E46E225B3DBC00EC4B6F /* Quiz.swift */,
+				8B7021A92279B3460071A45E /* QuizAnnotation.swift */,
+				8B7021AB2279E40A0071A45E /* QuestionAnnotation.swift */,
+				8B54FCBE2282E9C4005598AF /* designModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -434,11 +449,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8B7021AC2279E40A0071A45E /* QuestionAnnotation.swift in Sources */,
 				8BD4E469225B398100EC4B6F /* FBHelper.swift in Sources */,
+				8B7021A822799BCE0071A45E /* PlayQuizViewController.swift in Sources */,
 				8BCD077D225CCCA5005ED220 /* MapViewController.swift in Sources */,
+				8B7021AA2279B3460071A45E /* QuizAnnotation.swift in Sources */,
 				8BD4E46F225B3DBC00EC4B6F /* Quiz.swift in Sources */,
 				8BD4E46D225B3A9000EC4B6F /* Question.swift in Sources */,
+				8B54FCBF2282E9C4005598AF /* designModel.swift in Sources */,
 				8B3816F0225621BF00B6271D /* AppDelegate.swift in Sources */,
+				8B70216C22770A8E0071A45E /* CreateQuizViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -617,6 +637,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 73X6L645X4;
 				INFOPLIST_FILE = OrienteeringQuiz/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -636,6 +657,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 73X6L645X4;
 				INFOPLIST_FILE = OrienteeringQuiz/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

@@ -8,36 +8,41 @@
 
 import UIKit
 import Firebase
-protocol fbListenerProtocol {
-    func addQuizzes(quizzes: [Quiz])
+protocol FBListenerProtocol {
+    func addQuizzes(quizzes:[Quiz])
+    func addQuiz(quiz:Quiz)
+    
     
 }
 
 class FBHelper {
     var ref: DatabaseReference!
-    var quizzesDelegate:fbListenerProtocol?
+    var quizzesDelegate:FBListenerProtocol?
+    var createQuiz = Quiz()
     
-    
-    
-    
-
-    func addQuestionToDatabase(/*quiz: Quiz*/) {
-        let question = Question(question: "Vad heter Jag?", answer1: "Andreas", answerX: "Patrik", answer2: "Fredrik", rightAnswer: "Andreas", yPosition: 5.0, xPosition: 6.0)
-        
+    func addQuestionToDatabase() {
         ref = Database.database().reference()
-        self.ref.child("Quizzes").child("Quiz").child("question2").setValue(question.questionDictionary)
+        for i in 0...createQuiz.questions.count-1 {
+            
+            self.ref.child("Quizzes").child(createQuiz.ID).child("Question \(i+1)").setValue(createQuiz.questions[i].questionDictionary)
+        }
+        createQuiz.questions.removeAll()
     }
     
     func addQuizToDatabase()  {
-        let quiz = Quiz(name: "Ängspromenaden", latitude: 26.09384, longitude: 2.09842)
-        quiz.initDictionary()
-        ref = Database.database().reference()
-        self.ref.child("Quizzes").childByAutoId().setValue(quiz.quizDictionary){
+        
+        createQuiz.initDictionary()
+        ref = Database.database().reference().child("Quizzes").childByAutoId()
+        self.ref.setValue(createQuiz.quizDictionary){
             (error:Error?, ref:DatabaseReference) in
             if let error = error {
                 print("Data could not be saved: \(error).")
             } else {
-                print("Data saved successfully!")
+                
+                self.createQuiz.ID = ref.key as! String
+                
+                self.addQuestionToDatabase()
+                
             }
         }
     }
@@ -45,7 +50,7 @@ class FBHelper {
     func readQuizFromDatabase()   {
         
         var quizzes:[Quiz] = []
-        var count = 0
+        
         ref = Database.database().reference()
   
         ref.child("Quizzes").observe(.value) { snapshot in
@@ -55,14 +60,15 @@ class FBHelper {
                 let key = snap.key
                 let quiz = Quiz()
                 
+                
                 quiz.ID = key
                 if let value = snap.value as? NSDictionary{
                     quiz.dictionaryToObject(data: value as! [String : Any])
                 }
                 
                 quizzes.append(quiz)
-                print("ID \(quizzes[count].ID)")
-                count+=1
+                
+               
                 
             }
             
@@ -74,11 +80,38 @@ class FBHelper {
         
     }
     
-//    func readDataFromDatabase()-> Quiz {
-//        let quiz = Quiz()
-//
-//
-//        return quiz
-//    }
+    func readQuestionsFromDatabase(childKey:String)  {
+        let quiz = Quiz()
+        ref = Database.database().reference()
+        var count = 0
+        
+        ref.child("Quizzes").child(childKey).observe(.value) { snapshot in
+            for child in snapshot.children {
+                
+                
+                
+                    let snap = child as! DataSnapshot
+                    let question = Question()
+                    let key = snap.key
+                
+                    question.ID = key
+                    if let value = snap.value as? NSDictionary{
+                        question.dictionaryToObject(data: value as! [String : Any])
+                    }
+                print(question.answer1)
+                if(!question.answer1.elementsEqual("")){
+                    quiz.questions.append(question)
+                }
+                
+                count += 1
+            }
+            self.quizzesDelegate!.addQuiz(quiz: quiz)
+        }
+        
+        
+        
+        }
 
-}
+
+    }
+

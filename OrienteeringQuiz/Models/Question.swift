@@ -16,9 +16,14 @@ class Question {
     var answer2: String = ""
     var answers: [String] = []
     var rightAnswer: String = ""
-    var yPosition:Double = 0.0
-    var xPosition:Double = 0.0
+    var latitude:Double = 0.0
+    var longitude:Double = 0.0
     var questionDictionary: [String: Any] = [:]
+    var name = ""
+    var questionDone = false
+    var didAnswerRight = false
+    var playersAnswer = ""
+    var ID = ""
     
     func shuffleAnswers(){
         answers.shuffle()
@@ -28,15 +33,15 @@ class Question {
     }
     
     func initDictionary(){
-        questionDictionary = ["question":question, "answer1": answer1, "answerX":answerX,"answer2":answer2, "rightAnswer":rightAnswer, "yPosition": yPosition, "xPosition":xPosition]
+        questionDictionary = ["question":question, "answer1": answer1, "answerX":answerX,"answer2":answer2, "rightAnswer":rightAnswer, "latitude": latitude, "longitude":longitude]
     }
-    init(question:String, answer1:String, answerX:String, answer2:String, rightAnswer:String, yPosition:Double, xPosition:Double) {
+    init(question:String, answer1:String, answerX:String, answer2:String, rightAnswer:String, latitude:Double, longitude:Double) {
         answers = [answer1, answerX, answer2]
         shuffleAnswers()
         self.question = question
         self.rightAnswer = rightAnswer
-        self.yPosition = yPosition
-        self.xPosition = xPosition
+        self.latitude = latitude
+        self.longitude = longitude
         initDictionary()
     }
     init(data:[String:Any]) {
@@ -45,8 +50,34 @@ class Question {
         self.answerX = data["ansewrX"] as! String
         self.answer2 = data["answer2"] as! String
         self.rightAnswer = data["rightAnswer"] as! String
-        self.yPosition = data["yPosition"] as! Double
-        self.xPosition = data["xPosition"] as! Double
+        self.latitude = data["latitude"] as! Double
+        self.longitude = data["longitude"] as! Double
+    }
+    
+    func dictionaryToObject(data:[String:Any]) {
+        self.question = data["question"] as! String
+        self.answer1  = data["answer1"] as! String
+        self.answerX  = data["answerX"] as! String
+        self.answer2  = data["answer2"] as! String
+        self.rightAnswer = data["rightAnswer"] as! String
+        self.latitude = data["latitude"] as! Double
+        self.longitude = data["longitude"] as! Double
+    }
+    
+    init() {
+        
+    }
+    
+    func setPlayerAnswer(answer:String) {
+        self.playersAnswer = answer
+        setDidAnswerRight()
+    }
+    
+    func setDidAnswerRight() {
+        if (rightAnswer.elementsEqual(playersAnswer)){
+            didAnswerRight = true
+        }
+        questionDone = true
     }
     
 }

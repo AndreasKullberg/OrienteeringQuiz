@@ -31,6 +31,7 @@ class CreateQuizViewController: UIViewController {
         
         view.isOpaque = false
         questionLabel.text = "Question \(questionNumber)"
+        hideKeyboard()
         
     }
     
@@ -40,6 +41,14 @@ class CreateQuizViewController: UIViewController {
         questionDelegate!.questionSender(question: question)
         dismiss(animated: true, completion: nil)
         
+    }
+    
+    func hideKeyboard() {
+        let Tap:UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        view.addGestureRecognizer(Tap)
+    }
+    @objc func dismissKeyboard()  {
+        view.endEditing(true)
     }
     
   

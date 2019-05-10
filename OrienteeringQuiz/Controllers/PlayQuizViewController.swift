@@ -50,7 +50,7 @@ class PlayQuizViewController: UIViewController {
     }
     
     func setUpQuestion(){
-        questionLabel.text = question.question
+        questionLabel.text = "\(question.question)?"
         numberQuestionLabel.text = question.ID
         answerAButtonOutlet.setTitle(question.answer1, for: .normal)
         answerBButtonOutlet.setTitle(question.answerX, for: .normal)

@@ -23,6 +23,7 @@ class popupViews: UIView {
     func setUpView()  {
         let cornerRadius: CGFloat = 15.0
         layer.cornerRadius = cornerRadius
+        
         setShadow()
     }
     
@@ -51,22 +52,39 @@ class myButton: UIButton {
     func setUpView()  {
         setTitleColor(.white, for: .normal)
         setShadow()
-        let cornerRadius: CGFloat = 5.0
+        let cornerRadius: CGFloat = 20.0
         layer.cornerRadius = cornerRadius
         backgroundColor = .gray
-        layer.opacity = 0.5
+        
         
     }
     
     func setShadow()  {
         layer.shadowColor   = UIColor.black.cgColor
         layer.shadowOffset  = CGSize(width: 0.0, height: 6.0)
-        layer.shadowRadius  = 8
-        layer.shadowOpacity = 0.5
+        layer.shadowRadius  = 4
+        layer.shadowOpacity = 0.3
         clipsToBounds       = true
         layer.masksToBounds = false
     }
     
+}
+
+class yesNoButton:UIButton{
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setUpView()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        setUpView()
+    }
+    
+    func setUpView()  {
+        layer.borderWidth = 0.4
+        layer.borderColor = UIColor.lightGray.cgColor
+    }
 }
 
 class myTextfield: UITextField {

@@ -21,10 +21,9 @@ class MapViewController: UIViewController, FBListenerProtocol, MKMapViewDelegate
             setUpStartButtons(bool: false)
             setUpQuizDonePopupView(bool: true)
             playQuizDone()
+            
         }
     }
-    
-   
     
     func addQuiz(quiz: Quiz) {
         removeAnnotations()
@@ -64,7 +63,7 @@ class MapViewController: UIViewController, FBListenerProtocol, MKMapViewDelegate
     @IBOutlet weak var resultLabel: UILabel!
     @IBOutlet var quizDonePopupView: UIView!
     @IBOutlet weak var saveButtonOutlet: UIButton!
-    
+    @IBOutlet weak var distanceLabel: UILabel!
     
     @IBOutlet weak var startQuizLabel: UILabel!
     
@@ -92,13 +91,14 @@ class MapViewController: UIViewController, FBListenerProtocol, MKMapViewDelegate
         setUpLongPressRecogniser()
         fbHelper.quizzesDelegate = self
         fbHelper.readQuizFromDatabase()
-        
+        hideKeyboard()
+       
     }
-    
     
     // buttons and taps
     @IBAction func yesButton(_ sender: Any) {
         popupView.removeFromSuperview()
+        isCreateQuiz = false
         removeAnnotations()
         isCreateQuiz = true
         createAnnotation()
@@ -107,6 +107,7 @@ class MapViewController: UIViewController, FBListenerProtocol, MKMapViewDelegate
     
     @IBAction func noButton(_ sender: Any) {
         popupView.removeFromSuperview()
+        isCreateQuiz = false
     }
     
     @IBAction func okButton(_ sender: Any) {
@@ -116,7 +117,6 @@ class MapViewController: UIViewController, FBListenerProtocol, MKMapViewDelegate
     @IBAction func quizDoneOkButton(_ sender: Any) {
         setUpQuizDonePopupView(bool: false)
     }
-    
     
     @IBAction func cancelButton(_ sender: Any) {
         if(isPlayingQuiz){
@@ -130,7 +130,7 @@ class MapViewController: UIViewController, FBListenerProtocol, MKMapViewDelegate
             isCreateQuiz = false
             removeAnnotations()
             fbHelper.readQuizFromDatabase()
-            CreateQuizDone()
+            createQuizDone()
             questionNumber = 0
         }
         
@@ -140,8 +140,8 @@ class MapViewController: UIViewController, FBListenerProtocol, MKMapViewDelegate
     }
     
     @IBAction func saveButton(_ sender: Any) {
-        self.view.addSubview(nameQuizPopupView)
-        nameQuizPopupView.center = self.view.center
+        setupNameQuizPopupView()
+        createQuizDone()
     }
     
     @IBAction func doneButton(_ sender: Any) {
@@ -153,7 +153,6 @@ class MapViewController: UIViewController, FBListenerProtocol, MKMapViewDelegate
         isCreateQuiz = false
         removeAnnotations()
         fbHelper.readQuizFromDatabase()
-        CreateQuizDone()
         questionNumber = 0
         
     }
@@ -177,35 +176,37 @@ class MapViewController: UIViewController, FBListenerProtocol, MKMapViewDelegate
     {
         if (gestureReconizer.state == .began) {
             if(!isPlayingQuiz){
-                self.view.addSubview(popupView)
-                popupView.center = self.view.center
+                setupPopupView()
                 setUpPopupLabel()
                 coordinate = mapView.convert(gestureReconizer.location(in: mapView),toCoordinateFrom: mapView)
+                isCreateQuiz = true
             }
         }
     }
     
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
         
-        if(!isPlayingQuiz) {
-            quizAnnotation = view.annotation as! QuizAnnotation
-            startQuizLabel.text = quizAnnotation.quiz.name
-            playQuiz = quizAnnotation.quiz
-            checkDistanceToAnnotation()
-            setupstartGamePopupView()
-        }
-        else{
-            questionAnnotation = view.annotation as! QuestionAnnotation
-            question = questionAnnotation.question
-            if (playQuiz.isQuestionDone(question: questionAnnotation.question)){
-                setupFinishedQuestionPopupView(didAnswerRight: question.didAnswerRight)
-                
+        if(!isCreateQuiz){
+            if(!isPlayingQuiz) {
+                quizAnnotation = view.annotation as! QuizAnnotation
+                startQuizLabel.text = quizAnnotation.quiz.name
+                playQuiz = quizAnnotation.quiz
+                checkDistanceToAnnotation()
+                setupstartGamePopupView()
             }
             else{
-                startQuizLabel.text = view.annotation!.title as? String
-                checkDistanceToAnnotation()
-                
-                setupstartGamePopupView()
+                questionAnnotation = view.annotation as! QuestionAnnotation
+                question = questionAnnotation.question
+                if (playQuiz.isQuestionDone(question: questionAnnotation.question)){
+                    setupFinishedQuestionPopupView(didAnswerRight: question.didAnswerRight)
+                    
+                }
+                else{
+                    startQuizLabel.text = view.annotation!.title as? String
+                    checkDistanceToAnnotation()
+                    
+                    setupstartGamePopupView()
+                }
             }
         }
         
@@ -242,14 +243,31 @@ class MapViewController: UIViewController, FBListenerProtocol, MKMapViewDelegate
                 annotationLocation = CLLocation(latitude: questionAnnotation.coordinate.latitude,longitude: questionAnnotation.coordinate.longitude)
             }
             let distance = myLocation.distance(from: annotationLocation)
-            if (distance < 100.0) {
+            setDistance(distance: distance)
+            if (distance < 20.0) {
+                
+                startQuestionOutlet.alpha = 1.0
                 startQuestionOutlet.isUserInteractionEnabled = true
+                startQuizOutlet.alpha = 1.0
                 startQuizOutlet.isUserInteractionEnabled = true
             }
             else{
+                startQuestionOutlet.alpha = 0.5
+                startQuizOutlet.alpha = 0.5
                 startQuestionOutlet.isUserInteractionEnabled = false
                 startQuizOutlet.isUserInteractionEnabled = false
             }
+        }
+    }
+    
+    func setDistance(distance:Double)  {
+        let newDistance = distance - 20.0
+        
+        if(newDistance < 0.0){
+            distanceLabel.text = "Distance: \(0.0)"
+        }
+        else{
+        distanceLabel.text = "Distance: \(newDistance.rounded(toDecimalPlaces: 1))"
         }
     }
     
@@ -261,7 +279,7 @@ class MapViewController: UIViewController, FBListenerProtocol, MKMapViewDelegate
         locationButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
         locationButton.widthAnchor.constraint(equalToConstant: 50).isActive = true
         locationButton.layer.cornerRadius = 50 / 2
-        //locationButton.alpha = 0
+        
     }
     
     func setupLoccationManager(){
@@ -292,7 +310,7 @@ class MapViewController: UIViewController, FBListenerProtocol, MKMapViewDelegate
         case .authorizedWhenInUse:
             mapView.showsUserLocation = true
             centerViewOnUserLocation()
-            locationManager.stopUpdatingLocation()
+            locationManager.startUpdatingLocation()
             break
         case .denied:
             break
@@ -338,7 +356,7 @@ class MapViewController: UIViewController, FBListenerProtocol, MKMapViewDelegate
     func setTitle()  {
         self.title = "OrienteeringQuiz"
     }
-    func CreateQuizDone()  {
+    func createQuizDone()  {
         setTitle()
         inProgressView.isHidden = true
         
@@ -347,7 +365,7 @@ class MapViewController: UIViewController, FBListenerProtocol, MKMapViewDelegate
     
     func setupFinishedQuestionPopupView(didAnswerRight:Bool)  {
         self.view.addSubview(finishedQuestionPopupView)
-        finishedQuestionPopupView.center = self.view.center
+        finishedQuestionPopupView.center = mapView.center
         if (didAnswerRight){
             answerStatusLabel.text = "Answer was right!"
         }
@@ -370,20 +388,31 @@ class MapViewController: UIViewController, FBListenerProtocol, MKMapViewDelegate
     
     func setupstartGamePopupView() {
         self.view.addSubview(startGamePopupView)
-        startGamePopupView.center = self.view.center
+        startGamePopupView.center = mapView.center
+        
     }
     
     func setUpQuizDonePopupView(bool:Bool)  {
         
         if(bool){
             self.view.addSubview(quizDonePopupView)
-            quizDonePopupView.center = self.view.center
+            quizDonePopupView.center = mapView.center
             resultLabel.text = "Score: \(playQuiz.rightanswers) of \(playQuiz.questions.count)"
         }
         else{
             quizDonePopupView.removeFromSuperview()
         }
         
+    }
+    
+    func setupPopupView() {
+        self.view.addSubview(popupView)
+        popupView.center = mapView.center
+    }
+    
+    func setupNameQuizPopupView() {
+        self.view.addSubview(nameQuizPopupView)
+        nameQuizPopupView.center = mapView.center
     }
     
     func setUpPopupLabel()  {
@@ -445,17 +474,29 @@ class MapViewController: UIViewController, FBListenerProtocol, MKMapViewDelegate
 extension MapViewController: CLLocationManagerDelegate{
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         
-        guard let location = locations.last else {return}
+//        guard let location = locations.last else {return}
+//
+//        let centre = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
+//        let region = MKCoordinateRegion.init(center: centre, latitudinalMeters: meters, longitudinalMeters: meters)
+//        mapView.setRegion(region, animated: true)
         
-        let centre = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
-        let region = MKCoordinateRegion.init(center: centre, latitudinalMeters: meters, longitudinalMeters: meters)
-        mapView.setRegion(region, animated: true)
         
-        // do stuff
+        
+        checkDistanceToAnnotation()
+        
+        
     }
     
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus){
         checkLocationAuthorization()
+    }
+    
+    func hideKeyboard() {
+        let Tap:UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        view.addGestureRecognizer(Tap)
+    }
+    @objc func dismissKeyboard()  {
+        view.endEditing(true)
     }
     
     

@@ -44,6 +44,7 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="0.75310849471830987" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstAttribute="height" constant="71" id="4Fu-Vu-lTn"/>
                                     <constraint firstItem="GOy-s3-IXb" firstAttribute="baseline" secondItem="E3n-iO-4ci" secondAttribute="baseline" id="DPw-1y-7PN"/>
                                     <constraint firstItem="GOy-s3-IXb" firstAttribute="leading" secondItem="RDS-NN-H1Y" secondAttribute="leading" constant="33" id="DTe-Ia-Ndp"/>
                                     <constraint firstAttribute="trailing" secondItem="E3n-iO-4ci" secondAttribute="trailing" constant="38" id="me1-l6-A7L"/>
@@ -53,20 +54,20 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="RDS-NN-H1Y" firstAttribute="top" secondItem="YQN-RO-Wwp" secondAttribute="bottom" constant="-71" id="M6i-NJ-0ZB"/>
-                            <constraint firstItem="YQN-RO-Wwp" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Mbz-kK-6EJ"/>
-                            <constraint firstAttribute="trailing" secondItem="YQN-RO-Wwp" secondAttribute="trailing" id="Mjt-A7-8oP"/>
-                            <constraint firstItem="RDS-NN-H1Y" firstAttribute="bottom" secondItem="YQN-RO-Wwp" secondAttribute="bottom" id="XY9-gz-GkA"/>
-                            <constraint firstItem="RDS-NN-H1Y" firstAttribute="trailing" secondItem="YQN-RO-Wwp" secondAttribute="trailing" id="dYB-ET-Ywe"/>
-                            <constraint firstAttribute="bottom" secondItem="YQN-RO-Wwp" secondAttribute="bottom" id="krt-6c-t5f"/>
-                            <constraint firstItem="RDS-NN-H1Y" firstAttribute="leading" secondItem="YQN-RO-Wwp" secondAttribute="leading" id="pTY-CR-Bsv"/>
-                            <constraint firstItem="YQN-RO-Wwp" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="z66-WF-nZX"/>
+                            <constraint firstItem="RDS-NN-H1Y" firstAttribute="trailing" secondItem="YQN-RO-Wwp" secondAttribute="trailing" id="GOW-vu-3Qe"/>
+                            <constraint firstItem="RDS-NN-H1Y" firstAttribute="bottom" secondItem="YQN-RO-Wwp" secondAttribute="bottom" id="IUe-RQ-mt7"/>
+                            <constraint firstItem="YQN-RO-Wwp" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="IYi-IS-Hus"/>
+                            <constraint firstItem="YQN-RO-Wwp" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="bYg-1P-uLx"/>
+                            <constraint firstAttribute="bottom" secondItem="YQN-RO-Wwp" secondAttribute="bottom" id="ezl-mz-W2c"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="YQN-RO-Wwp" secondAttribute="trailing" id="gXj-od-t6E"/>
+                            <constraint firstItem="RDS-NN-H1Y" firstAttribute="leading" secondItem="YQN-RO-Wwp" secondAttribute="leading" id="tpy-CY-0mG"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="U2s-Ac-yVC"/>
                     <connections>
                         <outlet property="answerStatusLabel" destination="16a-wH-9ue" id="BBM-C3-fLl"/>
+                        <outlet property="distanceLabel" destination="GVS-WY-a1n" id="3D0-gB-ppp"/>
                         <outlet property="finishedQuestionPopupView" destination="4pc-SB-uwr" id="i2f-s9-asf"/>
                         <outlet property="inProgressView" destination="RDS-NN-H1Y" id="yyo-Yg-LcJ"/>
                         <outlet property="mapView" destination="YQN-RO-Wwp" id="ISO-1d-icv"/>
@@ -86,27 +87,27 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <view contentMode="scaleToFill" id="8ut-4z-BTF" customClass="popupViews" customModule="OrienteeringQuiz" customModuleProvider="target">
-                    <rect key="frame" x="0.0" y="0.0" width="240" height="165"/>
+                    <rect key="frame" x="0.0" y="0.0" width="240" height="178"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LlN-UM-mx8">
-                            <rect key="frame" x="16" y="112" width="208" height="30"/>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LlN-UM-mx8" customClass="myButton" customModule="OrienteeringQuiz" customModuleProvider="target">
+                            <rect key="frame" x="16" y="124" width="208" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <state key="normal" title="Cancel"/>
                             <connections>
                                 <action selector="startGamePopupCancelButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Hdi-vk-f6i"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0UN-Fe-Yjd">
-                            <rect key="frame" x="16" y="74" width="208" height="30"/>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0UN-Fe-Yjd" customClass="myButton" customModule="OrienteeringQuiz" customModuleProvider="target">
+                            <rect key="frame" x="16" y="86" width="208" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <state key="normal" title="Start quiz"/>
                             <connections>
                                 <action selector="startQuizButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zRT-es-c46"/>
                             </connections>
                         </button>
-                        <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pyh-aQ-OKW">
-                            <rect key="frame" x="16" y="74" width="208" height="30"/>
+                        <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pyh-aQ-OKW" customClass="myButton" customModule="OrienteeringQuiz" customModuleProvider="target">
+                            <rect key="frame" x="16" y="86" width="208" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <state key="normal" title="StartQuestion"/>
                             <connections>
@@ -115,7 +116,14 @@
                             </connections>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qNv-Jc-rkl">
-                            <rect key="frame" x="16" y="24" width="208" height="20"/>
+                            <rect key="frame" x="16" y="16" width="208" height="20"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GVS-WY-a1n">
+                            <rect key="frame" x="16" y="58" width="208" height="20"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="textColor"/>
@@ -126,18 +134,18 @@
                     <viewLayoutGuide key="safeArea" id="K0G-9i-5Pc"/>
                 </view>
                 <view contentMode="scaleToFill" id="gmh-Ha-apO" customClass="popupViews" customModule="OrienteeringQuiz" customModuleProvider="target">
-                    <rect key="frame" x="0.0" y="0.0" width="240" height="165"/>
+                    <rect key="frame" x="0.0" y="0.0" width="300" height="165"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
                         <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name your quiz" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9Xt-Wa-dB9" customClass="myTextfield" customModule="OrienteeringQuiz" customModuleProvider="target">
-                            <rect key="frame" x="16" y="31" width="208" height="30"/>
+                            <rect key="frame" x="16" y="31" width="268" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <nil key="textColor"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
-                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BAJ-FL-OLJ">
-                            <rect key="frame" x="16" y="93" width="208" height="30"/>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BAJ-FL-OLJ" customClass="myButton" customModule="OrienteeringQuiz" customModuleProvider="target">
+                            <rect key="frame" x="16" y="93" width="268" height="50"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <state key="normal" title="Done"/>
                             <connections>
@@ -152,8 +160,8 @@
                     <rect key="frame" x="0.0" y="0.0" width="240" height="165"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xGa-Kc-QEE">
-                            <rect key="frame" x="16" y="94" width="208" height="30"/>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xGa-Kc-QEE" customClass="myButton" customModule="OrienteeringQuiz" customModuleProvider="target">
+                            <rect key="frame" x="16" y="94" width="208" height="50"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <state key="normal" title="Ok"/>
                             <connections>
@@ -175,8 +183,8 @@
                     <rect key="frame" x="0.0" y="0.0" width="240" height="165"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UdA-Zx-hz4">
-                            <rect key="frame" x="16" y="96" width="208" height="30"/>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UdA-Zx-hz4" customClass="myButton" customModule="OrienteeringQuiz" customModuleProvider="target">
+                            <rect key="frame" x="16" y="96" width="208" height="50"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <state key="normal" title="Ok"/>
                             <connections>
@@ -184,14 +192,14 @@
                             </connections>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="16a-wH-9ue">
-                            <rect key="frame" x="16" y="38" width="208" height="21"/>
+                            <rect key="frame" x="16" y="31" width="208" height="21"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2J4-pv-Zot">
-                            <rect key="frame" x="16" y="67" width="208" height="21"/>
+                            <rect key="frame" x="16" y="60" width="208" height="21"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="textColor"/>
@@ -202,20 +210,11 @@
                     <viewLayoutGuide key="safeArea" id="73S-wR-Tee"/>
                 </view>
                 <view contentMode="scaleToFill" id="EQI-Qs-jcJ" customClass="popupViews" customModule="OrienteeringQuiz" customModuleProvider="target">
-                    <rect key="frame" x="0.0" y="0.0" width="240" height="165"/>
+                    <rect key="frame" x="0.0" y="0.0" width="240" height="145"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lj8-uW-bq7">
-                            <rect key="frame" x="40" y="95" width="30" height="30"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <state key="normal" title="Yes"/>
-                            <connections>
-                                <action selector="yesButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zcS-Rq-uYq"/>
-                                <segue destination="oUp-IW-RnT" kind="presentation" identifier="createQuestion" id="jRZ-Rx-iEe"/>
-                            </connections>
-                        </button>
-                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hGd-uC-dgO">
-                            <rect key="frame" x="171" y="95" width="30" height="30"/>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hGd-uC-dgO" customClass="yesNoButton" customModule="OrienteeringQuiz" customModuleProvider="target">
+                            <rect key="frame" x="120" y="99" width="120" height="46"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <state key="normal" title="No"/>
                             <connections>
@@ -223,18 +222,27 @@
                             </connections>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hdv-nx-sMx">
-                            <rect key="frame" x="16" y="31" width="208" height="48"/>
+                            <rect key="frame" x="16" y="24" width="208" height="48"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lj8-uW-bq7" customClass="yesNoButton" customModule="OrienteeringQuiz" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="99" width="120" height="46"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <state key="normal" title="Yes"/>
+                            <connections>
+                                <action selector="yesButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zcS-Rq-uYq"/>
+                                <segue destination="oUp-IW-RnT" kind="presentation" identifier="createQuestion" id="jRZ-Rx-iEe"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <viewLayoutGuide key="safeArea" id="EOu-rA-C7P"/>
                 </view>
             </objects>
-            <point key="canvasLocation" x="1001.4492753623189" y="73.660714285714278"/>
+            <point key="canvasLocation" x="1000.8" y="73.152709359605907"/>
         </scene>
         <!--Play Quiz View Controller-->
         <scene sceneID="Qiw-VR-PuC">
@@ -335,7 +343,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4gJ-xe-mMb" customClass="popupViews" customModule="OrienteeringQuiz" customModuleProvider="target">
-                                <rect key="frame" x="16" y="277.5" width="382" height="351"/>
+                                <rect key="frame" x="16" y="170" width="382" height="351"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Right answer" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="w9c-kM-DQx" customClass="myTextfield" customModule="OrienteeringQuiz" customModuleProvider="target">
                                         <rect key="frame" x="8" y="120" width="366" height="30"/>
@@ -368,7 +376,10 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Eti-oA-SnV" customClass="myButton" customModule="OrienteeringQuiz" customModuleProvider="target">
-                                        <rect key="frame" x="8" y="275" width="367" height="30"/>
+                                        <rect key="frame" x="8" y="275" width="366" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="0de-JO-eXL"/>
+                                        </constraints>
                                         <state key="normal" title="Done"/>
                                         <connections>
                                             <action selector="questionDone:" destination="oUp-IW-RnT" eventType="touchUpInside" id="Fw7-uM-qP1"/>
@@ -380,21 +391,21 @@
                                     <constraint firstAttribute="height" constant="351" id="3ou-eB-ztq"/>
                                     <constraint firstAttribute="trailing" secondItem="JCG-uK-jZY" secondAttribute="trailing" constant="8" id="A4G-NH-VjG"/>
                                     <constraint firstAttribute="trailing" secondItem="iMz-kL-kP3" secondAttribute="trailing" constant="8" id="AC9-pK-qlh"/>
-                                    <constraint firstAttribute="bottom" secondItem="Eti-oA-SnV" secondAttribute="bottom" constant="46" id="AD7-G3-4Lt"/>
+                                    <constraint firstAttribute="bottom" secondItem="Eti-oA-SnV" secondAttribute="bottom" constant="26" id="BaZ-sy-BJB"/>
                                     <constraint firstItem="JCG-uK-jZY" firstAttribute="top" secondItem="4gJ-xe-mMb" secondAttribute="top" constant="20" id="Gsi-Pc-xhm"/>
+                                    <constraint firstItem="Eti-oA-SnV" firstAttribute="top" secondItem="iMz-kL-kP3" secondAttribute="bottom" constant="27" id="OLx-A9-q12"/>
                                     <constraint firstItem="JCG-uK-jZY" firstAttribute="leading" secondItem="4gJ-xe-mMb" secondAttribute="leading" constant="8" id="SpJ-1E-Bd8"/>
                                     <constraint firstItem="Jtw-rh-gwf" firstAttribute="leading" secondItem="4gJ-xe-mMb" secondAttribute="leading" constant="8" id="WZj-Tz-ywK"/>
                                     <constraint firstItem="iMz-kL-kP3" firstAttribute="top" secondItem="Jtw-rh-gwf" secondAttribute="bottom" constant="19" id="bnJ-Ww-qbP"/>
                                     <constraint firstItem="w9c-kM-DQx" firstAttribute="top" secondItem="jgk-rp-vNo" secondAttribute="bottom" constant="19" id="fuA-KJ-Xfp"/>
                                     <constraint firstItem="iMz-kL-kP3" firstAttribute="leading" secondItem="4gJ-xe-mMb" secondAttribute="leading" constant="8" id="gj9-Zo-uqD"/>
-                                    <constraint firstItem="Eti-oA-SnV" firstAttribute="leading" secondItem="4gJ-xe-mMb" secondAttribute="leading" constant="8" id="mOx-8r-mbJ"/>
+                                    <constraint firstItem="Eti-oA-SnV" firstAttribute="leading" secondItem="4gJ-xe-mMb" secondAttribute="leading" constant="8" id="hYv-Pr-k0J"/>
+                                    <constraint firstAttribute="trailing" secondItem="Eti-oA-SnV" secondAttribute="trailing" constant="8" id="mOC-JX-O0y"/>
                                     <constraint firstItem="Jtw-rh-gwf" firstAttribute="top" secondItem="w9c-kM-DQx" secondAttribute="bottom" constant="19" id="oSM-xv-U8l"/>
                                     <constraint firstAttribute="trailing" secondItem="w9c-kM-DQx" secondAttribute="trailing" constant="8" id="pC3-gg-Vsa"/>
                                     <constraint firstItem="jgk-rp-vNo" firstAttribute="top" secondItem="JCG-uK-jZY" secondAttribute="bottom" constant="27" id="rUo-oM-Ovk"/>
-                                    <constraint firstItem="Eti-oA-SnV" firstAttribute="top" secondItem="iMz-kL-kP3" secondAttribute="bottom" constant="27" id="rX0-BY-14j"/>
                                     <constraint firstAttribute="trailing" secondItem="jgk-rp-vNo" secondAttribute="trailing" constant="8" id="tez-lz-Yvm"/>
                                     <constraint firstItem="jgk-rp-vNo" firstAttribute="leading" secondItem="4gJ-xe-mMb" secondAttribute="leading" constant="8" id="y88-Bz-2ir"/>
-                                    <constraint firstAttribute="trailing" secondItem="Eti-oA-SnV" secondAttribute="trailing" constant="7" id="ycA-X0-o6f"/>
                                     <constraint firstAttribute="trailing" secondItem="Jtw-rh-gwf" secondAttribute="trailing" constant="8" id="z3m-K9-tdS"/>
                                     <constraint firstItem="w9c-kM-DQx" firstAttribute="leading" secondItem="4gJ-xe-mMb" secondAttribute="leading" constant="8" id="zRK-dc-tu4"/>
                                 </constraints>
@@ -403,7 +414,7 @@
                         <color key="backgroundColor" white="1" alpha="0.23999999999999999" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="rEh-N5-M1I" firstAttribute="trailing" secondItem="4gJ-xe-mMb" secondAttribute="trailing" constant="16" id="2zt-3H-WZV"/>
-                            <constraint firstItem="4gJ-xe-mMb" firstAttribute="centerY" secondItem="rEh-N5-M1I" secondAttribute="centerY" id="XB5-sV-gOp"/>
+                            <constraint firstItem="4gJ-xe-mMb" firstAttribute="top" secondItem="rEh-N5-M1I" secondAttribute="top" constant="126" id="A9J-Bf-fkg"/>
                             <constraint firstItem="4gJ-xe-mMb" firstAttribute="leading" secondItem="rEh-N5-M1I" secondAttribute="leading" constant="16" id="mqJ-Sh-Oa0"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="rEh-N5-M1I"/>
@@ -418,7 +429,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vxi-d4-tsF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2405.7971014492755" y="-308.03571428571428"/>
+            <point key="canvasLocation" x="2405.5999999999999" y="-308.12807881773398"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="piL-yh-be3">

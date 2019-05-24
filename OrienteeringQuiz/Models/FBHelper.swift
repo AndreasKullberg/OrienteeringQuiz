@@ -67,28 +67,21 @@ class FBHelper {
                 }
                 
                 quizzes.append(quiz)
-                
-               
-                
             }
             
             self.quizzesDelegate!.addQuizzes(quizzes: quizzes)
-            
-            
         }
         
         
     }
     
     func readQuestionsFromDatabase(childKey:String)  {
-        let quiz = Quiz()
+        var quiz = Quiz()
         ref = Database.database().reference()
         var count = 0
         
         ref.child("Quizzes").child(childKey).observe(.value) { snapshot in
             for child in snapshot.children {
-                
-                
                 
                     let snap = child as! DataSnapshot
                     let question = Question()
@@ -99,7 +92,7 @@ class FBHelper {
                         question.dictionaryToObject(data: value as! [String : Any])
                     }
                 print(question.answer1)
-                if(!question.answer1.elementsEqual("")){
+                if(question.latitude != 0.0 && question.longitude != 0.0){
                     quiz.questions.append(question)
                 }
                 
@@ -108,10 +101,8 @@ class FBHelper {
             self.quizzesDelegate!.addQuiz(quiz: quiz)
         }
         
-        
-        
-        }
-
-
     }
+
+
+}
 

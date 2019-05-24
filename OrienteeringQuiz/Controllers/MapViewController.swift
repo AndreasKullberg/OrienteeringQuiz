@@ -98,7 +98,6 @@ class MapViewController: UIViewController, FBListenerProtocol, MKMapViewDelegate
     // buttons and taps
     @IBAction func yesButton(_ sender: Any) {
         popupView.removeFromSuperview()
-        isCreateQuiz = false
         removeAnnotations()
         isCreateQuiz = true
         createAnnotation()
@@ -179,7 +178,7 @@ class MapViewController: UIViewController, FBListenerProtocol, MKMapViewDelegate
                 setupPopupView()
                 setUpPopupLabel()
                 coordinate = mapView.convert(gestureReconizer.location(in: mapView),toCoordinateFrom: mapView)
-                isCreateQuiz = true
+                
             }
         }
     }
@@ -244,7 +243,7 @@ class MapViewController: UIViewController, FBListenerProtocol, MKMapViewDelegate
             }
             let distance = myLocation.distance(from: annotationLocation)
             setDistance(distance: distance)
-            if (distance < 20.0) {
+            if (distance < 200000.0) {
                 
                 startQuestionOutlet.alpha = 1.0
                 startQuestionOutlet.isUserInteractionEnabled = true
@@ -264,10 +263,10 @@ class MapViewController: UIViewController, FBListenerProtocol, MKMapViewDelegate
         let newDistance = distance - 20.0
         
         if(newDistance < 0.0){
-            distanceLabel.text = "Distance: \(0.0)"
+            distanceLabel.text = "Distance: \(0.0)m"
         }
         else{
-        distanceLabel.text = "Distance: \(newDistance.rounded(toDecimalPlaces: 1))"
+        distanceLabel.text = "Distance: \(newDistance.rounded(toDecimalPlaces: 1))m"
         }
     }
     

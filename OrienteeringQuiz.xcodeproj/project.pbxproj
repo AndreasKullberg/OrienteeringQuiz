@@ -10,6 +10,7 @@
 		47F4835EA7B9C62119C66E97 /* Pods_OrienteeringQuizTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A771DE323447967B8A56C52E /* Pods_OrienteeringQuizTests.framework */; };
 		5F874B05AA1E5BA8B272ADAF /* Pods_OrienteeringQuizUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E9CCFD98EFD287E9955ADDE /* Pods_OrienteeringQuizUITests.framework */; };
 		8B15E15422860051004270F8 /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B15E15322860051004270F8 /* Double.swift */; };
+		8B28C87B22943D3500730041 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8B28C87A22943D3500730041 /* GoogleService-Info.plist */; };
 		8B3816F0225621BF00B6271D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3816EF225621BF00B6271D /* AppDelegate.swift */; };
 		8B3816F5225621BF00B6271D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B3816F3225621BF00B6271D /* Main.storyboard */; };
 		8B3816F7225621C000B6271D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B3816F6225621C000B6271D /* Assets.xcassets */; };
@@ -21,7 +22,6 @@
 		8B7021A822799BCE0071A45E /* PlayQuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7021A722799BCE0071A45E /* PlayQuizViewController.swift */; };
 		8B7021AA2279B3460071A45E /* QuizAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7021A92279B3460071A45E /* QuizAnnotation.swift */; };
 		8B7021AC2279E40A0071A45E /* QuestionAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7021AB2279E40A0071A45E /* QuestionAnnotation.swift */; };
-		8B7A52B7225A52F2003C127F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8B7A52B6225A52F2003C127F /* GoogleService-Info.plist */; };
 		8BCD077D225CCCA5005ED220 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BCD077C225CCCA5005ED220 /* MapViewController.swift */; };
 		8BD4E469225B398100EC4B6F /* FBHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD4E468225B398100EC4B6F /* FBHelper.swift */; };
 		8BD4E46D225B3A9000EC4B6F /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD4E46C225B3A9000EC4B6F /* Question.swift */; };
@@ -55,6 +55,7 @@
 		7E9CCFD98EFD287E9955ADDE /* Pods_OrienteeringQuizUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OrienteeringQuizUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F01DB49B3C477B3C0DEA6B1 /* Pods-OrienteeringQuizUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OrienteeringQuizUITests.debug.xcconfig"; path = "Target Support Files/Pods-OrienteeringQuizUITests/Pods-OrienteeringQuizUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		8B15E15322860051004270F8 /* Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
+		8B28C87A22943D3500730041 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8B3816EC225621BF00B6271D /* OrienteeringQuiz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OrienteeringQuiz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B3816EF225621BF00B6271D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8B3816F4225621BF00B6271D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -72,7 +73,6 @@
 		8B7021A722799BCE0071A45E /* PlayQuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayQuizViewController.swift; sourceTree = "<group>"; };
 		8B7021A92279B3460071A45E /* QuizAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizAnnotation.swift; sourceTree = "<group>"; };
 		8B7021AB2279E40A0071A45E /* QuestionAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionAnnotation.swift; sourceTree = "<group>"; };
-		8B7A52B6225A52F2003C127F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8BCD077C225CCCA5005ED220 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		8BD4E468225B398100EC4B6F /* FBHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBHelper.swift; sourceTree = "<group>"; };
 		8BD4E46C225B3A9000EC4B6F /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
@@ -162,8 +162,8 @@
 				8B3816F3225621BF00B6271D /* Main.storyboard */,
 				8B3816F6225621C000B6271D /* Assets.xcassets */,
 				8B3816FB225621C000B6271D /* Info.plist */,
+				8B28C87A22943D3500730041 /* GoogleService-Info.plist */,
 				8B3816F8225621C000B6271D /* LaunchScreen.storyboard */,
-				8B7A52B6225A52F2003C127F /* GoogleService-Info.plist */,
 			);
 			path = OrienteeringQuiz;
 			sourceTree = "<group>";
@@ -328,7 +328,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8B3816FA225621C000B6271D /* LaunchScreen.storyboard in Resources */,
-				8B7A52B7225A52F2003C127F /* GoogleService-Info.plist in Resources */,
+				8B28C87B22943D3500730041 /* GoogleService-Info.plist in Resources */,
 				8B3816F7225621C000B6271D /* Assets.xcassets in Resources */,
 				8B3816F5225621BF00B6271D /* Main.storyboard in Resources */,
 			);
